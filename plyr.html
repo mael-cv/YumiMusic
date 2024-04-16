@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #player{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video controls crossorigin playsinline poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg" id="player">
+        <source src="./assets/video/demo.mp4" type="video/mp4" />
+    </video>
+    <button class="plyr__control plyr__control--skip-ad" data-plyr="skip-ad" style="display: none;">Skip Ad</button>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script>
+        const player = new Plyr('#player', {
+            ads: {
+                enabled: true,
+                tagUrl: 'https://ads.yuminako.com/vast/',
+                skipButton: '.plyr__control--skip-ad',
+                skipTime: 5
+            }
+            
+        });
+    </script>
+</body>
+</html>
+
